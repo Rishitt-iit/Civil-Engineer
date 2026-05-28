@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Staircase Calculator</title>
+
+<link rel="stylesheet"
+href="../../style.css">
+
+</head>
+
+<body>
+
+<div class="main">
+
+<h1>🪜 Staircase Calculator</h1>
+
+<div class="calc-card">
+
+<p>
+Formula:
+Steps = Floor Height / Riser Height
+</p>
+
+<input type="number"
+id="floor"
+placeholder="Floor Height (m)"
+class="calc-input">
+
+<input type="number"
+id="riser"
+placeholder="Riser Height (m)"
+class="calc-input">
+
+<button onclick="calculateStairs()"
+class="calc-btn">
+
+Calculate
+
+</button>
+
+<div id="result"
+class="result-box">
+
+Waiting For Input...
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function calculateStairs(){
+
+const floor =
+parseFloat(
+document.getElementById(
+"floor"
+).value
+);
+
+const riser =
+parseFloat(
+document.getElementById(
+"riser"
+).value
+);
+
+const steps =
+floor/riser;
+
+document.getElementById(
+"result"
+).innerHTML =
+
+`
+<h2>Stair Result 😎🔥</h2>
+
+<p>
+Total Steps:
+${Math.ceil(steps)}
+</p>
+`;
+
+}
+
+</script>
+
+</body>
+
+</html>

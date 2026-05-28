@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Load Calculator</title>
+
+<link rel="stylesheet"
+href="../../style.css">
+
+</head>
+
+<body>
+
+<div class="main">
+
+<h1>🏢 Load Calculator</h1>
+
+<div class="calc-card">
+
+<p>
+Formula:
+Total Load = Dead Load + Live Load
+</p>
+
+<input type="number"
+id="dead"
+placeholder="Dead Load (kN)"
+class="calc-input">
+
+<input type="number"
+id="live"
+placeholder="Live Load (kN)"
+class="calc-input">
+
+<button onclick="calculateLoad()"
+class="calc-btn">
+
+Calculate
+
+</button>
+
+<div id="result"
+class="result-box">
+
+Waiting For Input...
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function calculateLoad(){
+
+const dead =
+parseFloat(
+document.getElementById(
+"dead"
+).value
+);
+
+const live =
+parseFloat(
+document.getElementById(
+"live"
+).value
+);
+
+const total =
+dead+live;
+
+document.getElementById(
+"result"
+).innerHTML =
+
+`
+<h2>Load Result 😎🔥</h2>
+
+<p>
+Total Structural Load:
+${total.toFixed(2)} kN
+</p>
+`;
+
+}
+
+</script>
+
+</body>
+
+</html>

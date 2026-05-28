@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Slab Calculator</title>
+
+<link rel="stylesheet"
+href="../../style.css">
+
+</head>
+
+<body>
+
+<div class="main">
+
+<h1>🧱 Slab Calculator</h1>
+
+<div class="calc-card">
+
+<p>
+Formula:
+Slab Volume = L × B × T
+</p>
+
+<input type="number"
+id="length"
+placeholder="Slab Length"
+class="calc-input">
+
+<input type="number"
+id="breadth"
+placeholder="Slab Width"
+class="calc-input">
+
+<input type="number"
+id="thickness"
+placeholder="Slab Thickness"
+class="calc-input">
+
+<button onclick="calculateSlab()"
+class="calc-btn">
+
+Calculate
+
+</button>
+
+<div id="result"
+class="result-box">
+
+Waiting For Input...
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function calculateSlab(){
+
+const l =
+parseFloat(
+document.getElementById(
+"length"
+).value
+);
+
+const b =
+parseFloat(
+document.getElementById(
+"breadth"
+).value
+);
+
+const t =
+parseFloat(
+document.getElementById(
+"thickness"
+).value
+);
+
+const volume =
+l*b*t;
+
+document.getElementById(
+"result"
+).innerHTML =
+
+`
+<h2>Slab Result 😎🔥</h2>
+
+<p>
+Slab Volume:
+${volume.toFixed(2)} m³
+</p>
+`;
+
+}
+
+</script>
+
+</body>
+
+</html>

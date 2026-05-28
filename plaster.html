@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Plaster Calculator</title>
+
+<link rel="stylesheet"
+href="../../style.css">
+
+</head>
+
+<body>
+
+<div class="main">
+
+<h1>🧱 Plaster Calculator</h1>
+
+<div class="calc-card">
+
+<p>
+Formula:
+Plaster Volume = Area × Thickness
+</p>
+
+<input type="number"
+id="area"
+placeholder="Wall Area"
+class="calc-input">
+
+<input type="number"
+id="thickness"
+placeholder="Plaster Thickness"
+class="calc-input">
+
+<button onclick="calculatePlaster()"
+class="calc-btn">
+
+Calculate
+
+</button>
+
+<div id="result"
+class="result-box">
+
+Waiting For Input...
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function calculatePlaster(){
+
+const area =
+parseFloat(
+document.getElementById(
+"area"
+).value
+);
+
+const thickness =
+parseFloat(
+document.getElementById(
+"thickness"
+).value
+);
+
+const volume =
+area*thickness;
+
+document.getElementById(
+"result"
+).innerHTML =
+
+`
+<h2>Plaster Result 😎🔥</h2>
+
+<p>
+Plaster Volume:
+${volume.toFixed(2)} m³
+</p>
+`;
+
+}
+
+</script>
+
+</body>
+
+</html>

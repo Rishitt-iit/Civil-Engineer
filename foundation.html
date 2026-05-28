@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Foundation Calculator</title>
+
+<link rel="stylesheet"
+href="../../style.css">
+
+</head>
+
+<body>
+
+<div class="main">
+
+<h1>🏠 Foundation Calculator</h1>
+
+<div class="calc-card">
+
+<p>
+Formula:
+Foundation Volume = L × B × D
+</p>
+
+<input type="number"
+id="length"
+placeholder="Foundation Length"
+class="calc-input">
+
+<input type="number"
+id="breadth"
+placeholder="Foundation Breadth"
+class="calc-input">
+
+<input type="number"
+id="depth"
+placeholder="Foundation Depth"
+class="calc-input">
+
+<button onclick="calculateFoundation()"
+class="calc-btn">
+
+Calculate
+
+</button>
+
+<div id="result"
+class="result-box">
+
+Waiting For Input...
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function calculateFoundation(){
+
+const l =
+parseFloat(
+document.getElementById(
+"length"
+).value
+);
+
+const b =
+parseFloat(
+document.getElementById(
+"breadth"
+).value
+);
+
+const d =
+parseFloat(
+document.getElementById(
+"depth"
+).value
+);
+
+const volume =
+l*b*d;
+
+document.getElementById(
+"result"
+).innerHTML =
+
+`
+<h2>Foundation Result 😎🔥</h2>
+
+<p>
+Foundation Volume:
+${volume.toFixed(2)} m³
+</p>
+`;
+
+}
+
+</script>
+
+</body>
+
+</html>

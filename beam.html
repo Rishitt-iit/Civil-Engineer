@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Beam Calculator</title>
+
+<link rel="stylesheet"
+href="../../style.css">
+
+</head>
+
+<body>
+
+<div class="main">
+
+<h1>📐 Beam Calculator</h1>
+
+<div class="calc-card">
+
+<p>
+Formula:
+Beam Volume = L × B × D
+</p>
+
+<input type="number"
+id="length"
+placeholder="Beam Length"
+class="calc-input">
+
+<input type="number"
+id="breadth"
+placeholder="Beam Width"
+class="calc-input">
+
+<input type="number"
+id="depth"
+placeholder="Beam Depth"
+class="calc-input">
+
+<button onclick="calculateBeam()"
+class="calc-btn">
+
+Calculate
+
+</button>
+
+<div id="result"
+class="result-box">
+
+Waiting For Input...
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function calculateBeam(){
+
+const l =
+parseFloat(
+document.getElementById(
+"length"
+).value
+);
+
+const b =
+parseFloat(
+document.getElementById(
+"breadth"
+).value
+);
+
+const d =
+parseFloat(
+document.getElementById(
+"depth"
+).value
+);
+
+const volume =
+l*b*d;
+
+document.getElementById(
+"result"
+).innerHTML =
+
+`
+<h2>Beam Result 😎🔥</h2>
+
+<p>
+Beam Volume:
+${volume.toFixed(2)} m³
+</p>
+`;
+
+}
+
+</script>
+
+</body>
+
+</html>

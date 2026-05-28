@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>BBS Calculator</title>
+
+<link rel="stylesheet"
+href="../../style.css">
+
+</head>
+
+<body>
+
+<div class="main">
+
+<h1>🏗 BBS Calculator</h1>
+
+<div class="calc-card">
+
+<p>
+Formula:
+Steel Weight = D² / 162 × Length
+</p>
+
+<input type="number"
+id="diameter"
+placeholder="Bar Diameter (mm)"
+class="calc-input">
+
+<input type="number"
+id="length"
+placeholder="Bar Length (m)"
+class="calc-input">
+
+<input type="number"
+id="quantity"
+placeholder="Quantity"
+class="calc-input">
+
+<button onclick="calculateBBS()"
+class="calc-btn">
+
+Calculate
+
+</button>
+
+<div id="result"
+class="result-box">
+
+Waiting For Input...
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function calculateBBS(){
+
+const d =
+parseFloat(
+document.getElementById(
+"diameter"
+).value
+);
+
+const l =
+parseFloat(
+document.getElementById(
+"length"
+).value
+);
+
+const q =
+parseFloat(
+document.getElementById(
+"quantity"
+).value
+);
+
+const weight =
+((d*d)/162)*l*q;
+
+document.getElementById(
+"result"
+).innerHTML =
+
+`
+<h2>BBS Result 😎🔥</h2>
+
+<p>
+Total Steel Weight:
+${weight.toFixed(2)} kg
+</p>
+`;
+
+}
+
+</script>
+
+</body>
+
+</html>

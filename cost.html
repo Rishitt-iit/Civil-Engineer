@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Cost Estimator</title>
+
+<link rel="stylesheet"
+href="../../style.css">
+
+</head>
+
+<body>
+
+<div class="main">
+
+<h1>💰 Cost Estimator</h1>
+
+<div class="calc-card">
+
+<p>
+Estimate Total Construction Cost
+</p>
+
+<input type="number"
+id="area"
+placeholder="Built-up Area (sqft)"
+class="calc-input">
+
+<input type="number"
+id="rate"
+placeholder="Rate Per Sqft"
+class="calc-input">
+
+<button onclick="calculateCost()"
+class="calc-btn">
+
+Calculate
+
+</button>
+
+<div id="result"
+class="result-box">
+
+Waiting For Input...
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function calculateCost(){
+
+const area =
+parseFloat(
+document.getElementById(
+"area"
+).value
+);
+
+const rate =
+parseFloat(
+document.getElementById(
+"rate"
+).value
+);
+
+const total =
+area*rate;
+
+document.getElementById(
+"result"
+).innerHTML =
+
+`
+<h2>Cost Result 😎🔥</h2>
+
+<p>
+Estimated Cost:
+₹ ${total.toLocaleString()}
+</p>
+`;
+
+}
+
+</script>
+
+</body>
+
+</html>

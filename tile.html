@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Tile Calculator</title>
+
+<link rel="stylesheet"
+href="../style.css">
+
+</head>
+
+<body>
+
+<div class="main">
+
+<h1>⬜ Tile Calculator</h1>
+
+<input type="number"
+id="floor"
+placeholder="Floor Area"
+class="calc-input">
+
+<input type="number"
+id="tile"
+placeholder="Tile Area"
+class="calc-input">
+
+<button onclick="calculateTiles()"
+class="calc-btn">
+
+Calculate
+
+</button>
+
+<div id="result"
+class="result-box">
+
+Waiting For Input...
+
+</div>
+
+</div>
+
+
+<script>
+
+function calculateTiles(){
+
+const floor =
+parseFloat(
+document.getElementById(
+"floor"
+).value
+);
+
+const tile =
+parseFloat(
+document.getElementById(
+"tile"
+).value
+);
+
+const total =
+floor/tile;
+
+document.getElementById(
+"result"
+).innerHTML =
+
+`
+<h2>Tile Result 😎🔥</h2>
+
+<p>
+Required Tiles:
+${Math.ceil(total)}
+</p>
+`;
+
+}
+
+</script>
+
+</body>
+</html>

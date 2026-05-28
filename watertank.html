@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Water Tank Calculator</title>
+
+<link rel="stylesheet"
+href="../../style.css">
+
+</head>
+
+<body>
+
+<div class="main">
+
+<h1>💧 Water Tank Calculator</h1>
+
+<div class="calc-card">
+
+<p>
+Formula:
+Tank Volume = L × B × H
+</p>
+
+<input type="number"
+id="length"
+placeholder="Tank Length"
+class="calc-input">
+
+<input type="number"
+id="breadth"
+placeholder="Tank Breadth"
+class="calc-input">
+
+<input type="number"
+id="height"
+placeholder="Tank Height"
+class="calc-input">
+
+<button onclick="calculateTank()"
+class="calc-btn">
+
+Calculate
+
+</button>
+
+<div id="result"
+class="result-box">
+
+Waiting For Input...
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function calculateTank(){
+
+const l =
+parseFloat(
+document.getElementById(
+"length"
+).value
+);
+
+const b =
+parseFloat(
+document.getElementById(
+"breadth"
+).value
+);
+
+const h =
+parseFloat(
+document.getElementById(
+"height"
+).value
+);
+
+const volume =
+l*b*h;
+
+document.getElementById(
+"result"
+).innerHTML =
+
+`
+<h2>Tank Result 😎🔥</h2>
+
+<p>
+Tank Capacity:
+${volume.toFixed(2)} m³
+</p>
+
+<p>
+Water Storage:
+${(volume*1000).toFixed(0)} Litres
+</p>
+`;
+
+}
+
+</script>
+
+</body>
+
+</html>

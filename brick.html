@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Brick Calculator</title>
+
+<link rel="stylesheet"
+href="../style.css">
+
+</head>
+
+<body>
+
+<div class="main">
+
+<h1>🧱 Brick Calculator</h1>
+
+<input type="number"
+id="length"
+placeholder="Wall Length"
+class="calc-input">
+
+<input type="number"
+id="height"
+placeholder="Wall Height"
+class="calc-input">
+
+<input type="number"
+id="thickness"
+placeholder="Wall Thickness"
+class="calc-input">
+
+<button onclick="calculateBricks()"
+class="calc-btn">
+
+Calculate
+
+</button>
+
+<div id="result"
+class="result-box">
+
+Waiting For Input...
+
+</div>
+
+</div>
+
+
+<script>
+
+function calculateBricks(){
+
+const l =
+parseFloat(
+document.getElementById(
+"length"
+).value
+);
+
+const h =
+parseFloat(
+document.getElementById(
+"height"
+).value
+);
+
+const t =
+parseFloat(
+document.getElementById(
+"thickness"
+).value
+);
+
+const wallVolume =
+l*h*t;
+
+const brickVolume =
+0.19*0.09*0.09;
+
+const bricks =
+wallVolume/brickVolume;
+
+document.getElementById(
+"result"
+).innerHTML =
+
+`
+<h2>Brick Result 😎🔥</h2>
+
+<p>
+Required Bricks:
+${Math.ceil(bricks)}
+</p>
+`;
+
+}
+
+</script>
+
+</body>
+</html>

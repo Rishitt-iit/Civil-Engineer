@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Concrete Calculator</title>
+
+<link rel="stylesheet"
+href="../style.css">
+
+</head>
+
+<body>
+
+<div class="main">
+
+<h1>🧱 Concrete Calculator</h1>
+
+<input type="number"
+id="length"
+placeholder="Length"
+class="calc-input">
+
+<input type="number"
+id="width"
+placeholder="Width"
+class="calc-input">
+
+<input type="number"
+id="depth"
+placeholder="Depth"
+class="calc-input">
+
+<button onclick="calculateConcrete()"
+class="calc-btn">
+
+Calculate
+
+</button>
+
+<div id="result"
+class="result-box">
+
+Waiting For Input...
+
+</div>
+
+</div>
+
+
+<script>
+
+function calculateConcrete(){
+
+const l =
+parseFloat(
+document.getElementById(
+"length"
+).value
+);
+
+const w =
+parseFloat(
+document.getElementById(
+"width"
+).value
+);
+
+const d =
+parseFloat(
+document.getElementById(
+"depth"
+).value
+);
+
+const volume =
+l*w*d;
+
+const cement =
+volume*8;
+
+const sand =
+volume*0.44;
+
+const aggregate =
+volume*0.88;
+
+document.getElementById(
+"result"
+).innerHTML =
+
+`
+<h2>Result 😎🔥</h2>
+
+<p>Volume: ${volume.toFixed(2)} m³</p>
+
+<p>Cement: ${cement.toFixed(0)} Bags</p>
+
+<p>Sand: ${sand.toFixed(2)} m³</p>
+
+<p>Aggregate: ${aggregate.toFixed(2)} m³</p>
+`;
+
+}
+
+</script>
+
+</body>
+</html>

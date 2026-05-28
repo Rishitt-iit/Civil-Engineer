@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Column Calculator</title>
+
+<link rel="stylesheet"
+href="../../style.css">
+
+</head>
+
+<body>
+
+<div class="main">
+
+<h1>🏢 Column Calculator</h1>
+
+<div class="calc-card">
+
+<p>
+Formula:
+Column Volume = L × B × D
+</p>
+
+<input type="number"
+id="length"
+placeholder="Column Length"
+class="calc-input">
+
+<input type="number"
+id="breadth"
+placeholder="Column Breadth"
+class="calc-input">
+
+<input type="number"
+id="depth"
+placeholder="Column Depth"
+class="calc-input">
+
+<button onclick="calculateColumn()"
+class="calc-btn">
+
+Calculate
+
+</button>
+
+<div id="result"
+class="result-box">
+
+Waiting For Input...
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function calculateColumn(){
+
+const l =
+parseFloat(
+document.getElementById(
+"length"
+).value
+);
+
+const b =
+parseFloat(
+document.getElementById(
+"breadth"
+).value
+);
+
+const d =
+parseFloat(
+document.getElementById(
+"depth"
+).value
+);
+
+const volume =
+l*b*d;
+
+document.getElementById(
+"result"
+).innerHTML =
+
+`
+<h2>Column Result 😎🔥</h2>
+
+<p>
+Concrete Volume:
+${volume.toFixed(2)} m³
+</p>
+`;
+
+}
+
+</script>
+
+</body>
+
+</html>

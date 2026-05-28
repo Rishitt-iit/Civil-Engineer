@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Road Material Calculator</title>
+
+<link rel="stylesheet"
+href="../../style.css">
+
+</head>
+
+<body>
+
+<div class="main">
+
+<h1>🛣 Road Material Calculator</h1>
+
+<div class="calc-card">
+
+<p>
+Formula:
+Road Volume = L × W × T
+</p>
+
+<input type="number"
+id="length"
+placeholder="Road Length"
+class="calc-input">
+
+<input type="number"
+id="width"
+placeholder="Road Width"
+class="calc-input">
+
+<input type="number"
+id="thickness"
+placeholder="Road Thickness"
+class="calc-input">
+
+<button onclick="calculateRoad()"
+class="calc-btn">
+
+Calculate
+
+</button>
+
+<div id="result"
+class="result-box">
+
+Waiting For Input...
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function calculateRoad(){
+
+const l =
+parseFloat(
+document.getElementById(
+"length"
+).value
+);
+
+const w =
+parseFloat(
+document.getElementById(
+"width"
+).value
+);
+
+const t =
+parseFloat(
+document.getElementById(
+"thickness"
+).value
+);
+
+const volume =
+l*w*t;
+
+document.getElementById(
+"result"
+).innerHTML =
+
+`
+<h2>Road Result 😎🔥</h2>
+
+<p>
+Road Material Volume:
+${volume.toFixed(2)} m³
+</p>
+`;
+
+}
+
+</script>
+
+</body>
+
+</html>

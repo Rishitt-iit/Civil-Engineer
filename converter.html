@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Unit Converter</title>
+
+<link rel="stylesheet"
+href="../../style.css">
+
+</head>
+
+<body>
+
+<div class="main">
+
+<h1>📏 Unit Converter</h1>
+
+<div class="calc-card">
+
+<p>
+Feet To Meter Converter
+</p>
+
+<input type="number"
+id="feet"
+placeholder="Enter Feet"
+class="calc-input">
+
+<button onclick="convertFeet()"
+class="calc-btn">
+
+Convert
+
+</button>
+
+<div id="result"
+class="result-box">
+
+Waiting For Input...
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function convertFeet(){
+
+const feet =
+parseFloat(
+document.getElementById(
+"feet"
+).value
+);
+
+const meter =
+feet*0.3048;
+
+document.getElementById(
+"result"
+).innerHTML =
+
+`
+<h2>Conversion Result 😎🔥</h2>
+
+<p>
+Meters:
+${meter.toFixed(2)} m
+</p>
+`;
+
+}
+
+</script>
+
+</body>
+
+</html>

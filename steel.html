@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Steel Calculator</title>
+
+<link rel="stylesheet"
+href="../style.css">
+
+</head>
+
+<body>
+
+<div class="main">
+
+<h1>🏗 Steel Weight Calculator</h1>
+
+<input type="number"
+id="diameter"
+placeholder="Bar Diameter (mm)"
+class="calc-input">
+
+<input type="number"
+id="length"
+placeholder="Length (m)"
+class="calc-input">
+
+<button onclick="calculateSteel()"
+class="calc-btn">
+
+Calculate
+
+</button>
+
+<div id="result"
+class="result-box">
+
+Waiting For Input...
+
+</div>
+
+</div>
+
+
+<script>
+
+function calculateSteel(){
+
+const d =
+parseFloat(
+document.getElementById(
+"diameter"
+).value
+);
+
+const l =
+parseFloat(
+document.getElementById(
+"length"
+).value
+);
+
+const weight =
+((d*d)/162)*l;
+
+document.getElementById(
+"result"
+).innerHTML =
+
+`
+<h2>Steel Result 😎🔥</h2>
+
+<p>
+Steel Weight:
+${weight.toFixed(2)} kg
+</p>
+`;
+
+}
+
+</script>
+
+</body>
+</html>

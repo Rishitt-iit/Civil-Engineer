@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>CE Toolkit Login</title>
+
+  <link rel="stylesheet"
+        href="../style.css">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+
+<!-- LOGIN CONTAINER -->
+
+<div class="login-container">
+
+  <div class="login-card">
+
+    <h1>CE Toolkit</h1>
+
+    <p style="
+    text-align:center;
+    margin-bottom:25px;
+    color:#94a3b8;
+    ">
+      Civil Engineering Smart Platform
+    </p>
+
+
+    <!-- EMAIL -->
+
+    <input type="email"
+           id="email"
+           placeholder="Enter Email"
+           class="calc-input">
+
+
+    <!-- PASSWORD -->
+
+    <input type="password"
+           id="password"
+           placeholder="Enter Password"
+           class="calc-input">
+
+
+    <!-- LOGIN BUTTON -->
+
+    <button onclick="loginUser()"
+            class="calc-btn"
+            style="width:100%;">
+
+      Login
+
+    </button>
+
+
+    <!-- SIGNUP BUTTON -->
+
+    <button onclick="signupUser()"
+            class="calc-btn"
+            style="
+            width:100%;
+            margin-top:15px;
+            background:#0ea5e9;
+            ">
+
+      Create Account
+
+    </button>
+
+  </div>
+
+</div>
+
+
+
+<!-- FIREBASE -->
+
+<script type="module">
+
+import { initializeApp }
+
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+
+getAuth,
+
+signInWithEmailAndPassword,
+
+createUserWithEmailAndPassword
+
+}
+
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+
+
+const firebaseConfig = {
+
+apiKey: "AIzaSyBvhHRYpLk2cbpvqoWUYHahWppKoqHokkM",
+
+authDomain: "ce-toolkit-e617d.firebaseapp.com",
+
+projectId: "ce-toolkit-e617d",
+
+storageBucket: "ce-toolkit-e617d.firebasestorage.app",
+
+messagingSenderId: "701097199681",
+
+appId: "1:701097199681:web:0af43453fba73d212b5ec0",
+
+measurementId: "G-B37REH0CM9"
+
+};
+
+
+
+const app =
+initializeApp(firebaseConfig);
+
+const auth =
+getAuth(app);
+
+
+
+/* LOGIN FUNCTION */
+
+window.loginUser = async function(){
+
+const email =
+document.getElementById("email").value;
+
+const password =
+document.getElementById("password").value;
+
+
+
+if(email === "" || password === ""){
+
+alert("Please fill all fields");
+
+return;
+
+}
+
+
+
+try{
+
+await signInWithEmailAndPassword(
+
+auth,
+
+email,
+
+password
+
+);
+
+
+
+alert("Login Successful 😎🔥");
+
+
+
+window.location.href =
+"../index.html";
+
+}
+
+catch(error){
+
+alert(error.message);
+
+}
+
+}
+
+
+
+/* SIGNUP FUNCTION */
+
+window.signupUser = async function(){
+
+const email =
+document.getElementById("email").value;
+
+const password =
+document.getElementById("password").value;
+
+
+
+if(email === "" || password === ""){
+
+alert("Please fill all fields");
+
+return;
+
+}
+
+
+
+try{
+
+await createUserWithEmailAndPassword(
+
+auth,
+
+email,
+
+password
+
+);
+
+
+
+alert("Account Created 😎🔥");
+
+}
+
+catch(error){
+
+alert(error.message);
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>

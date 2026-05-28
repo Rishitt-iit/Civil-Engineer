@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Survey Calculator</title>
+
+<link rel="stylesheet"
+href="../../style.css">
+
+</head>
+
+<body>
+
+<div class="main">
+
+<h1>📡 Survey Calculator</h1>
+
+<div class="calc-card">
+
+<p>
+Formula:
+RL = HI - Staff Reading
+</p>
+
+<input type="number"
+id="hi"
+placeholder="Height of Instrument"
+class="calc-input">
+
+<input type="number"
+id="staff"
+placeholder="Staff Reading"
+class="calc-input">
+
+<button onclick="calculateSurvey()"
+class="calc-btn">
+
+Calculate
+
+</button>
+
+<div id="result"
+class="result-box">
+
+Waiting For Input...
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function calculateSurvey(){
+
+const hi =
+parseFloat(
+document.getElementById(
+"hi"
+).value
+);
+
+const staff =
+parseFloat(
+document.getElementById(
+"staff"
+).value
+);
+
+const rl =
+hi-staff;
+
+document.getElementById(
+"result"
+).innerHTML =
+
+`
+<h2>Survey Result 😎🔥</h2>
+
+<p>
+Reduced Level (RL):
+${rl.toFixed(2)} m
+</p>
+`;
+
+}
+
+</script>
+
+</body>
+
+</html>

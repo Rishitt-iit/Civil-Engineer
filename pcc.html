@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>PCC Calculator</title>
+
+<link rel="stylesheet"
+href="../../style.css">
+
+</head>
+
+<body>
+
+<div class="main">
+
+<h1>🏗 PCC Calculator</h1>
+
+<div class="calc-card">
+
+<p>
+Formula:
+PCC Volume = L × B × D
+</p>
+
+<input type="number"
+id="length"
+placeholder="Length"
+class="calc-input">
+
+<input type="number"
+id="breadth"
+placeholder="Breadth"
+class="calc-input">
+
+<input type="number"
+id="depth"
+placeholder="Depth"
+class="calc-input">
+
+<button onclick="calculatePCC()"
+class="calc-btn">
+
+Calculate
+
+</button>
+
+<div id="result"
+class="result-box">
+
+Waiting For Input...
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function calculatePCC(){
+
+const l =
+parseFloat(
+document.getElementById(
+"length"
+).value
+);
+
+const b =
+parseFloat(
+document.getElementById(
+"breadth"
+).value
+);
+
+const d =
+parseFloat(
+document.getElementById(
+"depth"
+).value
+);
+
+const volume =
+l*b*d;
+
+document.getElementById(
+"result"
+).innerHTML =
+
+`
+<h2>PCC Result 😎🔥</h2>
+
+<p>
+PCC Volume:
+${volume.toFixed(2)} m³
+</p>
+`;
+
+}
+
+</script>
+
+</body>
+
+</html>
